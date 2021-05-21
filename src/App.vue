@@ -1,89 +1,103 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <!-- <img v-if="showLoader" src="@/assets/bulb.png" class="loader" />
-    <router-view v-else /> -->
-    <router-view />
+    <Navbar v-if="!showLoader" />
+    <Loader v-if="showLoader" />
+    <router-view v-else />
+    <div class="footer"></div>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
+
 export default {
   name: "App",
+  components: {
+    Navbar,
+    Loader,
+  },
   data() {
     return {
       showLoader: true,
-    };
-  },
-  mounted() {
-    // const myHeaders = new Headers();
-
-    // const myRequest = new Request("flowers.jpg", {
-    //   method: "GET",
-    //   headers: myHeaders,
-    //   mode: "cors",
-    //   cache: "default",
-    // });
-    fetch(
-      "https://qwer-e5991-default-rtdb.europe-west1.firebasedatabase.app/products.json"
-      // {
+      url:
+        "https://qwer-3d393-default-rtdb.europe-west1.firebasedatabase.app/.json",
+      // postArgs: {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ num: 1 }),
-      // }
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      });
-    // .then((response) => {
-    //   console.log(response);
-    //   return response.json();
-    // })
-    // .then((commits) => {
-    //   console.log(commits);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+      //   body: JSON.stringify([{}]),
+      // },
+    };
+  },
+  methods: {
+    // sendData() {
+    //   fetch(`${this.url}?auth=${this.token}`, this.postArgs)
+    //     .then((response) => response.json())
+    //     .then(({ name }) => {
+    //       this.showLoader = false;
+    //     });
+    // },
+    getData() {
+      fetch(this.url)
+        .then((response) => response.json())
+        .then((response) => {
+          this.showLoader = false;
+          this.$store.commit("saveProductsInfo", response);
+          this.$store.commit("saveFilteredProducts");
+        });
+    },
+    // deleteData() {
+    //   fetch(`${this.url}?auth=${this.token}`, {
+    //     method: "DELETE",
+    //   }).then((response) => {
+    //     this.showLoader = false;
+    //   });
+    // },
+  },
+  beforeMount() {
+    this.getData();
+    // this.deleteData();
+    // this.sendData();
   },
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/sassVars.scss";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: $body-width;
+  height: 100%;
+  margin: 0 $body-margin-x 20px $body-margin-x;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 #app {
+  width: 100%;
+  // max-width: 1000px;
+  height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  .loader {
-    animation: loading 1s linear infinite alternate;
+  .footer {
+    width: 100%;
+    height: 30px;
   }
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-@keyframes loading {
+@keyframes rotate {
   from {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
   to {
-    transform: scale(1.5);
+    transform: rotate(365deg);
   }
 }
 </style>
