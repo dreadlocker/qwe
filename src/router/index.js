@@ -19,7 +19,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: `${process.env.BASE_URL}qwe2`,
+  base: `${process.env.BASE_URL}tehnika`,
   routes
 })
 
