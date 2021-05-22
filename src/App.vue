@@ -3,7 +3,6 @@
     <Navbar v-if="!showLoader" />
     <Loader v-if="showLoader" />
     <router-view v-else />
-    <div class="footer"></div>
   </div>
 </template>
 
@@ -30,13 +29,6 @@ export default {
     };
   },
   methods: {
-    // sendData() {
-    //   fetch(`${this.url}?auth=${this.token}`, this.postArgs)
-    //     .then((response) => response.json())
-    //     .then(({ name }) => {
-    //       this.showLoader = false;
-    //     });
-    // },
     getData() {
       fetch(this.url)
         .then((response) => response.json())
@@ -46,6 +38,13 @@ export default {
           this.$store.commit("saveFilteredProducts");
         });
     },
+    // sendData() {
+    //   fetch(`${this.url}?auth=${this.token}`, this.postArgs)
+    //     .then((response) => response.json())
+    //     .then(({ name }) => {
+    //       this.showLoader = false;
+    //     });
+    // },
     // deleteData() {
     //   fetch(`${this.url}?auth=${this.token}`, {
     //     method: "DELETE",
@@ -86,10 +85,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  .footer {
-    width: 100%;
-    height: 30px;
-  }
 }
 
 @keyframes rotate {

@@ -30,9 +30,6 @@ export default {
   data() {
     return {};
   },
-  beforeMount() {
-    // this.$store.commit("saveFilteredProducts");
-  },
 };
 </script>
 
@@ -41,7 +38,7 @@ export default {
 
 .about {
   width: 100%;
-  height: $content-height;
+  height: $about-content-height;
   display: flex;
   flex-direction: column;
   justify-content: center;

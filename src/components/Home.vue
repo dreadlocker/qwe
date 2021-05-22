@@ -54,6 +54,7 @@
         </div>
       </div>
     </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -84,12 +85,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/sassVars.scss";
+
 .cards-holder {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   .card {
-    min-width: 280px;
+    min-width: 250px;
     width: 30%;
     height: 350px;
     box-shadow: 0px 0px 15px grey;
@@ -110,6 +113,10 @@ export default {
       }
     }
   }
+}
+.footer {
+  width: 100%;
+  height: $footer-height;
 }
 
 @media (max-width: 587px) {
