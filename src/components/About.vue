@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="info-holder">
-      <img class="pic" alt="shop image" src="https://lh3.google.com/u/0/d/1kSy740yLWN52slM4zHc9K0x9HULwP235=w1920-h913-iv1">
+      <img class="pic" alt="shop image" src="https://i.ibb.co/rfyWFBv/TJs6gLJg.jpg">
     </div>
     <div class="info-holder">
       <div>Адрес:</div>
