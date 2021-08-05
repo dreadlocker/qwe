@@ -42,11 +42,6 @@
             </div>
             <div>
               <span class="info-1"
-                >Цвят: <span class="info-2">{{ product.color }}</span></span
-              >
-            </div>
-            <div>
-              <span class="info-1"
                 >Цена: <span class="info-2">{{ product.price }}</span> лв.</span
               >
             </div>
