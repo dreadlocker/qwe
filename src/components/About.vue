@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="info-holder">
-      <img class="pic" alt="shop image" src="https://previews.dropbox.com/p/thumb/ABOjXvVCm6nFZMUlDczcrAlW-_ZRXK9ytB02uCrO405S9qufOBqALPYgjObjBn7m8ge7htT11jgqnz-Xz-keoI_IoRmzlMAUAQGKEdN53P29hzNt9fHmuxNsRmuMjkdtZvC4bnrN19NX1DRnSyJW2Ke3sY5p5rCTciCt_4tEKTsLSDm8fNs89XOLhcAhPjTfLeaZ3eRZC8V-hOCzG7jDMMk8WXoSP6_gSP-9OmKCZoTjfVhJUOljCbX0_YBp4aqc3jJIa3eHR9n0V2mwSZlqpallniXcZrL14TmFKREA2TUZBMqNlyPZJ9dVPKgw_rbi2QQP8mk4Gy84hUM1djyDEgDD8tETMGP225mtVSTJs6gLJg/p.jpeg?fv_content=true&size_mode=5">
+      <img class="pic" alt="shop image" src="https://lh3.google.com/u/0/d/1kSy740yLWN52slM4zHc9K0x9HULwP235=w1920-h913-iv1">
     </div>
     <div class="info-holder">
       <div>Адрес:</div>

@@ -19,8 +19,7 @@ export default {
   data() {
     return {
       showLoader: true,
-      url:
-        "https://qwer-3d393-default-rtdb.europe-west1.firebasedatabase.app/.json",
+      url: "https://qwer-3d393-default-rtdb.europe-west1.firebasedatabase.app/.json",
       // postArgs: {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },
