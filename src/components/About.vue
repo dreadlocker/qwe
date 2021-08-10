@@ -16,8 +16,8 @@
       <div>
         <a
           class="info"
-          target="_blanck"
-          href="https://goo.gl/maps/STuviJfv7eoFuGth7"
+          target="_blank"
+          href="https://maps.app.goo.gl/wT4B5bbjFavDa73P8"
           >Google Maps</a
         >
       </div>

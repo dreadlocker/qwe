@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
-    <Navbar v-if="!showLoader" />
-    <Loader v-if="showLoader" />
-    <router-view v-else />
-  </div>
+<div id="app">
+  <Navbar v-if="!showLoader" />
+  <Loader v-if="showLoader" />
+  <router-view v-else />
+</div>
 </template>
 
 <script>
@@ -33,6 +33,10 @@ export default {
         .then((response) => response.json())
         .then((response) => {
           this.showLoader = false;
+          response = response.map(category => ({
+            label: category.label,
+            products: category.products.filter(product => product),
+          }))
           this.$store.commit("saveProductsInfo", response);
           this.$store.commit("saveFilteredProducts");
         });
@@ -67,6 +71,7 @@ html {
   width: 100%;
   height: 100%;
 }
+
 body {
   width: $body-width;
   height: 100%;
@@ -75,6 +80,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 #app {
   width: 100%;
   // max-width: 1000px;
@@ -90,6 +96,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(365deg);
   }
